@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import pl.gawor.android.tutorials.affirmations.R
@@ -14,8 +15,9 @@ import pl.gawor.android.tutorials.affirmations.model.Affirmation
 // class A( // members specified in brackets (stands for default constructor) : extendedClass<Generic>() // constructor call in extends list
 class ItemAdapter(private val dataset: List<Affirmation>, private val context: Context) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.item_title)
+        val imageView: ImageView = view.findViewById(R.id.item_image)
     }
 
     /**
@@ -36,6 +38,7 @@ class ItemAdapter(private val dataset: List<Affirmation>, private val context: C
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
         holder.textView.text = context.resources.getString(item.stringResId)
+        holder.imageView.setImageResource(item.imageResId)
     }
 
     /**
