@@ -2,12 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="16dp"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/item_title"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textAppearance="?attr/textAppearanceHeadline6"/>
+<!--More about `?attr/...`  https://medium.com/androiddevelopers/android-styling-common-theme-attributes-8f7c50c9eaba  -->
 
     <ImageView
         android:id="@+id/item_image"
