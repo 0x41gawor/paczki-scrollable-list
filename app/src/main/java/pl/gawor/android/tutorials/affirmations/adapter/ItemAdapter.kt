@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import pl.gawor.android.tutorials.affirmations.R
 import pl.gawor.android.tutorials.affirmations.model.Affirmation
@@ -41,6 +42,8 @@ class ItemAdapter(private val dataset: List<Affirmation>, private val context: C
         val item = dataset[position]
         holder.textView.text = context.resources.getString(item.stringResId)
         holder.imageView.setImageResource(item.imageResId)
+        holder.checkBox.isChecked = item.isChecked
+        holder.checkBox.setOnClickListener { checkBoxClicked(position) }
     }
 
     /**
@@ -50,4 +53,9 @@ class ItemAdapter(private val dataset: List<Affirmation>, private val context: C
     // If Kotlin function returns single line u can simplify it
     override fun getItemCount() = dataset.size
 
+    private fun checkBoxClicked(position: Int) {
+        Toast.makeText(context,"Clicked on ${position}'th checkBox", Toast.LENGTH_LONG).show()
+        dataset[position].isChecked = !dataset[position].isChecked
+        Toast.makeText(context,"dataset[$position].isChecked = ${dataset[position].isChecked}", Toast.LENGTH_SHORT).show()
+    }
 }
