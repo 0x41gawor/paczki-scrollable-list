@@ -279,3 +279,6 @@ class ItemAdapter(private val dataset: List<Affirmation>, private val context: C
 }
 ```
 
+## 4 Use cards
+
+It is still hard to tell if an image belongs to the affirmation text above or below that image. To fix this you can use a **Card** view. A Card view provides an easy way to contain a group of views while providing a consistent style for the container. For more Material Design guidance on using cards, check out this [guide on cards](https://material.io/develop/android/components/cards).

@@ -5,8 +5,8 @@ import androidx.annotation.StringRes
 
 data class Affirmation(
     @StringRes val stringResId: Int,
-    @DrawableRes val imageResId: Int)
-
+    @DrawableRes val imageResId: Int,
+    var isChecked: Boolean)
 /*
 Both stringResourceId and imageResourceId are integer values.
 Although this looks okay, the caller could accidentally pass in the arguments in the wrong order (imageResourceId first instead of stringResourceId).
